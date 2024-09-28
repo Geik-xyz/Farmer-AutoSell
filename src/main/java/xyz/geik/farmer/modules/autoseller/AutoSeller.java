@@ -47,7 +47,7 @@ public class AutoSeller extends FarmerModule {
     @Override
     public void onEnable() {
         instance = this;
-        this.setLang(Main.getConfigFile().getSettings().getLang(), Main.getInstance());
+        this.setLang(Main.getConfigFile().getSettings().getLang(), this.getClass());
         setupFile();
 
         if (configFile.isStatus()) {
