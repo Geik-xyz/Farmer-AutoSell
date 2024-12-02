@@ -56,9 +56,9 @@ public class AutoSeller extends FarmerModule {
             autoSellerGuiCreateEvent = new AutoSellerGuiCreateEvent();
             Bukkit.getPluginManager().registerEvents(autoSellerEvent, Main.getInstance());
             Bukkit.getPluginManager().registerEvents(autoSellerGuiCreateEvent, Main.getInstance());
-            getAllowedItems().addAll(Main.getModulesFile().getAutoSeller().getItems());
-            customPerm = Main.getModulesFile().getAutoSeller().getCustomPerm();
-            defaultStatus = Main.getModulesFile().getAutoSeller().isDefaultStatus();
+            getAllowedItems().addAll(configFile.getItems());
+            customPerm = configFile.getCustomPerm();
+            defaultStatus = configFile.isDefaultStatus();
             String messagex = "&3[" + GLib.getInstance().getName() + "] &a" + getName() + " enabled.";
             ChatUtils.sendMessage(Bukkit.getConsoleSender(), messagex);
         }
