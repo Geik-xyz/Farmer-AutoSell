@@ -2,14 +2,12 @@ package xyz.geik.farmer.modules.autoseller.configuration;
 
 import lombok.Getter;
 import lombok.Setter;
-import xyz.geik.farmer.configuration.ModulesFile;
 import xyz.geik.glib.shades.okaeri.configs.OkaeriConfig;
 import xyz.geik.glib.shades.okaeri.configs.annotation.Comment;
 import xyz.geik.glib.shades.okaeri.configs.annotation.NameStrategy;
 import xyz.geik.glib.shades.okaeri.configs.annotation.Names;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**

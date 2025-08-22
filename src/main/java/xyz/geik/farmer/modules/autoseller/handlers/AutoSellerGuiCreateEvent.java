@@ -9,6 +9,7 @@ import xyz.geik.farmer.api.handlers.FarmerModuleGuiCreateEvent;
 import xyz.geik.farmer.helpers.gui.GuiHelper;
 import xyz.geik.farmer.model.Farmer;
 import xyz.geik.farmer.modules.autoseller.AutoSeller;
+import xyz.geik.glib.chat.ChatUtils;
 import xyz.geik.glib.shades.inventorygui.DynamicGuiElement;
 import xyz.geik.glib.shades.inventorygui.StaticGuiElement;
 
@@ -64,9 +65,9 @@ public class AutoSellerGuiCreateEvent implements Listener {
         ItemStack item = GuiHelper.getItem("moduleGui.icon", AutoSeller.getInstance().getLang());
         ItemMeta meta = item.getItemMeta();
         String status = farmer.getAttributeStatus("autoseller") ?
-                AutoSeller.getInstance().getLang().getText("enabled") :
-                AutoSeller.getInstance().getLang().getText("disabled");
-        meta.setLore(meta.getLore().stream().map(line -> line.replace("{status}", status))
+                AutoSeller.getInstance().getLang().getString("enabled") :
+                AutoSeller.getInstance().getLang().getString("disabled");
+        meta.setLore(meta.getLore().stream().map(line -> ChatUtils.color(line.replace("{status}", status)))
                 .collect(Collectors.toList()));
         item.setItemMeta(meta);
         return item;

@@ -77,9 +77,9 @@ public class AutoSeller extends FarmerModule {
             return;
         if (!getAllowedItems().isEmpty())
             getAllowedItems().clear();
-        getAllowedItems().addAll(Main.getModulesFile().getAutoSeller().getItems());
-        customPerm = Main.getModulesFile().getAutoSeller().getCustomPerm();
-        defaultStatus = Main.getModulesFile().getAutoSeller().isDefaultStatus();
+        getAllowedItems().addAll(this.getConfigFile().getItems());
+        customPerm = this.getConfigFile().getCustomPerm();
+        defaultStatus = this.getConfigFile().isDefaultStatus();
     }
 
     /**
